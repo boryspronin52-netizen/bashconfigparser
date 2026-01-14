@@ -1,13 +1,8 @@
 Copyright (c): 
-2003-2010, Michael Foord, Nicola Larosa
-2014-2023, Eli Courtwright, Rob Dennis
+2025-  Peter Varkoly
 All rights reserved.
 E-mails : 
-michael AT python DOT org
-nico AT tekNico DOT net
-eli AT courtwright DOT org
-rdennis AT gmail DOT com
-
+pvarkoly AT cephalix DOT eu
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -21,10 +16,9 @@ met:
       disclaimer in the documentation and/or other materials provided
       with the distribution.
 
-    * Neither the names of Michael Foord, Eli Courtwright or Rob Dennis,
-      nor the name of Voidspace,  may be used to endorse or promote 
-      products derived from this software without specific prior written 
-      permission.
+    * Neither the names of Peter Varkoly, or CRANIX, nor the name of CEPHALIX,
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
