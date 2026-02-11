@@ -94,7 +94,7 @@ class BashConfigParser:
     
     # Regex-Patterns für verschiedene Variablendefinitionen
     PATTERNS = {
-        VariableStyle.BASH: re.compile(r'^(\s*)([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*(#.*)?$'),
+        VariableStyle.BASH: re.compile(r'^(\s*)([A-Za-z_][A-Za-z0-9_\.]*)\s*=\s*(.*?)\s*(#.*)?$'),
         VariableStyle.EXPORT: re.compile(r'^(\s*)export\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*(#.*)?$'),
         VariableStyle.DECLARE: re.compile(r'^(\s*)declare\s+-x\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*(#.*)?$'),
         VariableStyle.SETENV: re.compile(r'^(\s*)setenv\s+([A-Za-z_][A-Za-z0-9_]*)\s+(.*?)\s*(#.*)?$'),
@@ -103,13 +103,15 @@ class BashConfigParser:
     # Kommentar-Pattern
     COMMENT_PATTERN = re.compile(r'^(\s*)#(.*)$')
     
-    def __init__(self, preserve_formatting: bool = True):
+    def __init__(self, preserve_formatting: bool = True, config_file: str = None):
         self.preserve_formatting = preserve_formatting
         self.variables: Dict[str, ConfigVariable] = {}
         self.comments: List[ConfigComment] = []
         self.empty_lines: List[ConfigEmptyLine] = []
         self.lines: List[Union[ConfigVariable, ConfigComment, ConfigEmptyLine]] = []
         self.file_path: Optional[str] = None
+        if config_file != None:
+            self.parse_file(config_file)
         
     def parse_file(self, file_path: str) -> None:
         """Parst eine Konfigurationsdatei"""
